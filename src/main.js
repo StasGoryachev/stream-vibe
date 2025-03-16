@@ -1,1 +1,3 @@
-console.log('ghbdtn')
+import OverlayMenu from '@/modules/OverlayMenu';
+
+new OverlayMenu()
