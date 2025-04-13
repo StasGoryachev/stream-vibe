@@ -19,6 +19,12 @@ const Slider = (props) => {
           ))}
         </ul>
       </div>
+
+      {!navigationTargetElementId && (
+        <SliderNavigation
+          className="slider__navigation"
+        />
+      )}
     </div>
   )
 }
