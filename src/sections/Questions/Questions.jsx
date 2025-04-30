@@ -1,3 +1,4 @@
+import AccordionGroup from "@/components/AccordionGroup"
 import Button from "@/components/Button"
 import Section from "@/layouts/Section"
 
@@ -16,9 +17,11 @@ const Questions = () => {
     <Section
       title="Got questions? We've got answers! Check out our FAQ section to find answers to the most common questions about StreamVibe."
       titleId="Questions-title"
-      description="Whether you're looking for a comedy to make you laugh, a drama to make you think, or a documentary to learn something new"
+      description="Got questions? We've got answers! Check out our FAQ section to find answers to the most common questions about StreamVibe."
       actions={<Button label="Ask a Question" href="/support" />}
-    ></Section>
+    >
+      <AccordionGroup columns={2}>{questionItems}</AccordionGroup>
+    </Section>
   )
 }
 
