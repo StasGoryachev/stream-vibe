@@ -1,7 +1,10 @@
+import "./AccordionGroup.scss"
 import classNames from "classnames"
 
 const AccordionGroup = (props) => {
   const { columns = 1, children, isOrderedList = true } = props
+
+  const itemsPerColumn = Math.ceil(children.length / columns)
 
   const ListTag = isOrderedList ? "ol" : "ul"
   return (
@@ -12,7 +15,13 @@ const AccordionGroup = (props) => {
       })}
     >
       {children.map((child, index) => (
-        <li className="accordion-group__item" key={index}>
+        <li
+          className={classNames("accordion-group__item", {
+            "accordion-group__item--last-column-item":
+              columns > 1 && itemsPerColumn / (index + 1) === 1,
+          })}
+          key={index}
+        >
           {child}
         </li>
       ))}
